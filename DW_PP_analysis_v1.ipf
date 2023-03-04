@@ -94,19 +94,29 @@ do
 	elseif(((round(V_logEOF/1000)*1000)==1.1e5))//|(round(V_logEOF/1000)*1000)==5.6e5)
 		print("Single stem")
 		Single_stim_files = AddListItem(Current_file, Single_stim_files)
+		
+	
 	
 	elseif((round(V_logEOF/1000)*1000)==1.447e+06)
+	if(K_run_synaptic_decomp == 1)
 		print("Decomposition A")
 		Decomp_analysis(Current_file,S_path)
+		endif
 	elseif((round(V_logEOF/1000)*1000)==2.66e+06)
+	if(K_run_synaptic_decomp == 1)
 		print("Decomposition B")
 		Decomp_analysis(Current_file,S_path)
-	elseif((round(V_logEOF/1000)*1000)== 1.127e+06)
+		endif
+	elseif((round(V_logEOF/1000)*1000)== 1.127e+06)	
+	if(K_run_synaptic_decomp == 1)
 		print("Decomposition C")
 		Decomp_analysis(Current_file,S_path)
+		endif
 	elseif((round(V_logEOF/1000)*1000)== 4.819e+06)
+	if(K_run_synaptic_decomp == 1)
 		print("Decomposition D")
 		Decomp_analysis(Current_file,S_path)
+		endif
 		
 		
 		
@@ -130,8 +140,13 @@ print(strlen(PP_files))
 if(numtype(strlen(PP_files)))
     abort
  else
-  PP_analysis(PP_files,S_path)
-  print("yes")
+ 	if (K_run_pp == 1)
+ 	print("run PP analysis!")
+  		PP_analysis(PP_files,S_path)
+  	else
+  	print("skip PP analysis!")
+  	endif
+  
 endif
 
 

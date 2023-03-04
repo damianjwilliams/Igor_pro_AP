@@ -521,7 +521,7 @@ Setdatafolder root:
 SVAR  gCellFolderName
 Setdatafolder $(gCellFolderName)
 
-SVAR gCell_ID
+SVAR gCell_ID,gGenotype,gAPTrace
 NVAR gAP_SFA,gChange_in_AP_threshold,gChange_in_AP_rate,ghalf_max_AP_sweep,gChange_in_AP_amplitude
 
 NewLayout/N=SFA_page/W=(200,263,706,861)
@@ -537,7 +537,7 @@ NewLayout/N=SFA_page/W=(200,263,706,861)
 	AppendLayoutObject/W=SFA_page/F=1/T=0/R=(292,244,600,454) Graph phase_plane
 	AppendLayoutObject/W=SFA_page/F=1/T=0/R=(18,457,596,780) Graph troughs
 	
-	TextBox/W=SFA_page/C/N=text0/A=RT/X=9.38/Y=0.53 "Cell: "+gcell_ID+"\rSweep Number: "+num2str(ghalf_max_AP_sweep)+"\rSFA: "+num2str(gAP_SFA)+"\rThrehold change (last/first): "+num2str(gChange_in_AP_threshold)+"\rRate change (last/first): "+num2str(gChange_in_AP_rate)+"\rAmplitude change (last/first):"+num2str(gChange_in_AP_amplitude)
+	TextBox/W=SFA_page/C/N=text0/A=RT/X=9.38/Y=0.53 "Cell: "+gcell_ID+"\rGenotype: "+gGenotype+"\rTrace ID: "+gAPTrace+"\rSweep Number: "+num2str(ghalf_max_AP_sweep)+"\rSFA: "+num2str(gAP_SFA)+"\rThrehold change (last/first): "+num2str(gChange_in_AP_threshold)+"\rRate change (last/first): "+num2str(gChange_in_AP_rate)+"\rAmplitude change (last/first):"+num2str(gChange_in_AP_amplitude)
 	//ModifyLayout/W=SFA_page width(text0)=228,height(text0)=204
 
 

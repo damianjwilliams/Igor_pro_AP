@@ -249,10 +249,13 @@ for(j=0;j<Num_traces;j+=1)
 	endif
 	
 	
+	Smooth 200, $Filtered_trace_name	
+	
+	
 	
 
 	Differentiate $Filtered_trace_name/D=$TrcPotDiffNm
-	//Smooth 200, $TrcPotDiffNm
+	
 	WaveStats/Q $TrcPotDiffNm
 	string AP_times_Nm = "RecordA" +num2str(j)+"_AP_times"
 
@@ -353,7 +356,11 @@ for(j=0;j<Num_traces;j+=1)
 		Variable Vthresholdtime = (round(V_LevelX)*(deltax(tracepot)))
 		
 		
-	//Plot AP	
+	//Plot AP
+	subthreshold_depol(j)	
+	
+	
+	
 	
 	//Coordinates for plotting AP potential 10 ms before and after plot
 		Variable startplot = (round(V_LevelX)*(deltax(tracepot))-4)
@@ -420,6 +427,9 @@ for(j=0;j<Num_traces;j+=1)
 		Variable Max_AP_rise_loc = V_maxloc
 		Variable Max_AP_fall = V_min
 		Variable Max_AP_fall_loc = V_minloc
+		
+		
+		//
 		
 		
 		DFREF CurrDF
@@ -700,7 +710,7 @@ Setaxis/W=half_max_trace left, -80,55
 
 AppendToGraph/W=half_max_trace/L=left3/B=bottom3  AP_zero vs half_max_AP_trace_times
 	ModifyGraph/W=half_max_trace axisEnab(left3)={0.91,1},freePos(left3)=0,freePos(bottom3)={0,left2}
-	ModifyGraph/W=half_max_trace mode(AP_zero)=3,marker(AP_zero)=19,msize(AP_zero)=0.2,rgb(AP_zero)=(1,16019,65535)
+	ModifyGraph/W=half_max_trace mode(AP_zero)=3,marker(AP_zero)=19,msize(AP_zero)=0.75,rgb(AP_zero)=(1,16019,65535)
 	ModifyGraph noLabel(left3)=2,axThick(left3)=0
 	ModifyGraph noLabel(bottom3)=2,axThick(bottom3)=0
 	Setaxis/W=half_max_trace bottom3, 0, max_x

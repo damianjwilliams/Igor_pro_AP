@@ -80,12 +80,12 @@ SetDrawEnv xcoord= bottom,ycoord= left,dash=2,linethick=1,linefgc=(0,65535,0)
 DrawLine/W=troughs ap_trough_val_loc,ap_trough_val,ap_trough_val_loc,gAP_threshold
 
 //fast trough value
-SetDrawEnv xcoord= bottom,ycoord= left,dash=2,linethick=1,linefgc=(0,65535,0)
-DrawLine/W=troughs ap_fast_trough_val_loc,ap_fast_trough_val,ap_fast_trough_val_loc,gAP_threshold
+//SetDrawEnv xcoord= bottom,ycoord= left,dash=2,linethick=1,linefgc=(0,65535,0)
+//DrawLine/W=troughs ap_fast_trough_val_loc,ap_fast_trough_val,ap_fast_trough_val_loc,gAP_threshold
 
 //slow trough value
-SetDrawEnv xcoord= bottom,ycoord= left,dash=2,linethick=1,linefgc=(0,65535,0)
-DrawLine/W=troughs ap_slow_trough_val_loc,ap_slow_trough_val,ap_slow_trough_val_loc,gAP_threshold
+//SetDrawEnv xcoord= bottom,ycoord= left,dash=2,linethick=1,linefgc=(0,65535,0)
+//DrawLine/W=troughs ap_slow_trough_val_loc,ap_slow_trough_val,ap_slow_trough_val_loc,gAP_threshold
 
 
 //Trough baseline
@@ -99,21 +99,21 @@ SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
 DrawLine/W=troughs ap_trough_time_start,V_max,ap_trough_time_start,V_min
 
 //fast trough area start
-SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
-DrawLine/W=troughs ap_fast_trough_time_start,V_max,ap_fast_trough_time_start,V_min
+//SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
+//DrawLine/W=troughs ap_fast_trough_time_start,V_max,ap_fast_trough_time_start,V_min
 
 //fast trough end
-SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
-DrawLine/W=troughs ap_fast_trough_time_end,V_max,ap_fast_trough_time_end,V_min
+//SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
+//DrawLine/W=troughs ap_fast_trough_time_end,V_max,ap_fast_trough_time_end,V_min
 
 //slow trough end
-SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
-DrawLine/W=troughs ap_slow_trough_time_end,V_max,ap_slow_trough_time_end,V_min
+//SetDrawEnv xcoord= bottom,ycoord= left,dash=3,linethick=1
+//DrawLine/W=troughs ap_slow_trough_time_end,V_max,ap_slow_trough_time_end,V_min
 
 
-Tag/W=troughs/N=text0/F=0/B=1/A=RT $trace_wave_nm, ap_slow_trough_val_loc, "slow"
+//Tag/W=troughs/N=text0/F=0/B=1/A=RT $trace_wave_nm, ap_slow_trough_val_loc, "slow"
 Tag/W=troughs/N=text1/F=0/B=1/A=LT $trace_wave_nm, ap_trough_val_loc, "all"
-Tag/W=troughs/N=text2/F=0/B=1/A=LT $trace_wave_nm, ap_fast_trough_val_loc, "fast"
+//Tag/W=troughs/N=text2/F=0/B=1/A=LT $trace_wave_nm, ap_fast_trough_val_loc, "fast"
 
 
 ModifyGraph/W=troughs/Z gfRelSize=6
@@ -127,8 +127,8 @@ currDF = getdataFolderDFR()
 
 SetDataFolder  $(gCellFolderName)
 variable/g gap_trough_val = ap_trough_val
-variable/g gap_fast_trough_val = ap_fast_trough_val
-variable/g gap_slow_trough_val = ap_slow_trough_val
+variable/g gap_fast_trough_val = NaN
+variable/g gap_slow_trough_val = NaN
 
 setDataFolder CurrDF
 

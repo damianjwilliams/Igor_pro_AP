@@ -56,6 +56,10 @@ Menu "DJW Macros", dynamic
 
 End
 
+Constant K_run_synaptic_decomp = 0
+Constant K_run_double_dif = 0
+Constant K_run_pp = 1
+
 
 Function Get_Cell_Info()
 //CreateCellFolder()
@@ -951,10 +955,10 @@ Appendlayoutobject/F=0/R=(293,329,578,498.5) graph AP_calc_trace
 AppendLayoutObject/F=0/R=(22,670,164,814) Graph SFAtrace
 Appendlayoutobject/F=0/R=(303,501,574.5,658.5) graph FixedCurrVsAPs
 //Appendlayoutobject/F=0/R=(305,675,584,809.5) graph MaxNumAPtrace
-AppendLayoutObject/F=0/R=(410,674,584,808) Graph MaxNumAPtrace
+AppendLayoutObject/F=0/R=(300,674,584,808) Graph MaxNumAPtrace
 Appendlayoutobject/F=0/R=(23,491,285.5,657) graph Rheobasegraph
 Appendlayoutobject/F=0/R=(23,157,281,324) graph Hyperpolarizations
-AppendLayoutObject/F=0/R=(142,672,394,812) Graph For_dd_check
+AppendLayoutObject/F=0/R=(23,672,285,812) Graph For_dd_check
 
 PrintSettings/W=Collateddata margins={0,0,0,0}
 

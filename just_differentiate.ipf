@@ -157,7 +157,7 @@ if(V_LevelsFound>0)
 					ModifyGraph/W=For_dd_check rgb(AP_region_sec_dif_filt)=(0,0,65535,32767)
 					ModifyGraph/W=For_dd_check rgb(AP_region_sec_dif)=(65535,0,0,32767)
 					
-					if(K_double_dif ==  1)
+					if(K_run_double_dif == 1)
 						
 						
 						if (UserCursorAdjust(30) != 0)
