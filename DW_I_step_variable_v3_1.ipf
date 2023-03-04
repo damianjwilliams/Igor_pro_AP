@@ -466,6 +466,7 @@ Wave NumberAPs
 Wavestats NumberAPs
 Variable  RowMaxAPNo = V_maxRowLoc
 Variable  MaxNoAPs = V_max
+//Switched to ceiling
 Variable half_max_ap_no = ceil(MaxNoAPs/2)
 Variable sweep_half_max
 
